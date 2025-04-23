@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 80px;
+      margin: 0;
+      animation: fadeIn 2s ease-out forwards;
+    }
+
+    .more {
+      margin-top: 30px;
+      font-size: 24px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      background-color: white;
+      color: #2575fc;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .more:hover {
+      transform: scale(1.1);
+      background-color: #e6e6e6;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .hidden-message {
+      font-size: 28px;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome</h1>
+  <button class="more" onclick="showMore()">More</button>
+  <div class="hidden-message" id="message">Thanks for visiting our awesome site!</div>
+
+  <script>
+    function showMore() {
+      const message = document.getElementById('message');
+      message.classList.add('show');
+    }
+  </script>
+
+</body>
+</html>
